@@ -2,7 +2,7 @@
   "name": "react-native-vega-scroll-list",
   "version": "1.0.0",
   "description": "",
-  "main": "src/VegaScrollList.js",
+  "main": "src/VegaScrollList.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
