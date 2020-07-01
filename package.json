@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Iqbal Ansyori <ansyori_iqbal@gmail.com>",
+  "author": "Iqbal Ansyori <ansyori.iqbal@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "react": "16.11.0",
