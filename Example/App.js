@@ -1,52 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Dimensions,
-  Image,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const meatImage = require('./bananas-01.jpg');
+import {View, Text, StatusBar, Dimensions, Image} from 'react-native';
 
 import VegaScrollList from 'react-native-vega-scroll-list';
 
 import {data} from './data';
-import NavigationBar from 'react-native-navbar';
-
-const rightButtonConfig = {
-  title: 'Next',
-  handler: () => alert('hello!'),
-};
-
-const titleConfig = {
-  title: 'Hello, world',
-};
 
 const App: () => React$Node = () => {
   let {width} = Dimensions.get('window');
   return (
     <>
-      {/* <NavigationBar title={titleConfig} rightButton={rightButtonConfig} /> */}
       <StatusBar hidden />
       <View
         style={{
@@ -77,7 +39,6 @@ const App: () => React$Node = () => {
         data={data}
         keyExtractor={item => item.index}
         renderItem={data => {
-          //console.log(data.item);
           return (
             <View
               elevation={5}
@@ -95,10 +56,8 @@ const App: () => React$Node = () => {
                 backgroundColor: '#ffffff',
                 borderRadius: 6,
               }}>
-              {/* <Text>{data.name}</Text> */}
               <Card item={data.item} />
             </View>
-            // <Card item={data.item} />
           );
         }}
       />
@@ -108,8 +67,6 @@ const App: () => React$Node = () => {
 };
 
 const Card = ({item}) => {
-  //console.log('item', item);
-  let {width} = Dimensions.get('window');
   let categoryColor = '#00ff00';
   if (item.category === 'Fruit') {
     categoryColor = '#ffa500';
@@ -136,7 +93,6 @@ const Card = ({item}) => {
           width: '90%',
           marginHorizontal: 10,
           marginVertical: 8,
-          // marginLe,
         }}>
         <Text
           style={{
@@ -181,44 +137,5 @@ const Card = ({item}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
 export default App;
