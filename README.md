@@ -3,7 +3,7 @@
 
 # React Native Vega Scroll List
 
-A React Native FlatList with a lightweight animation (fade and shrink head item of the list). **Works on iOS & Android.**
+A React Native FlatList with a lightweight animation which fade and shrink the head item of list when scrolling. **Works on iOS & Android.**
 #### Inspired by [Vega Scroll](https://github.com/ApplikeySolutions/VegaScroll) - an iOS dependency.
 
 ## Preview
