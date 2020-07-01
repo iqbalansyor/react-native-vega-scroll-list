@@ -31,15 +31,49 @@ const meatImage = require('./bananas-01.jpg');
 import VegaScrollList from 'react-native-vega-scroll-list';
 
 import {data} from './data';
+import NavigationBar from 'react-native-navbar';
+
+const rightButtonConfig = {
+  title: 'Next',
+  handler: () => alert('hello!'),
+};
+
+const titleConfig = {
+  title: 'Hello, world',
+};
 
 const App: () => React$Node = () => {
   let {width} = Dimensions.get('window');
   return (
     <>
-      {/* <StatusBar barStyle="dark-content" /> */}
+      {/* <NavigationBar title={titleConfig} rightButton={rightButtonConfig} /> */}
+      <StatusBar hidden />
+      <View
+        style={{
+          width: '100%',
+          height: 100,
+          backgroundColor: '#D3D3D3',
+          shadowColor: '#000000',
+          shadowOffset: {
+            width: 0,
+            height: 2,
+          },
+          shadowRadius: 3,
+          shadowOpacity: 0.5,
+        }}>
+        <Text
+          style={{
+            fontSize: 32,
+            marginLeft: 16,
+            marginTop: 50,
+            fontWeight: '200',
+          }}>
+          Groceries
+        </Text>
+      </View>
       <VegaScrollList
-        style={{marginTop: 50}}
-        marginVertical={8}
+        style={{marginTop: 8}}
+        marginVertical={12}
         data={data}
         keyExtractor={item => item.index}
         renderItem={data => {
@@ -53,13 +87,13 @@ const App: () => React$Node = () => {
                   width: 0,
                   height: 2,
                 },
-                shadowRadius: 4,
-                shadowOpacity: 1.0,
+                shadowRadius: 3,
+                shadowOpacity: 0.5,
                 height: 70,
                 width: width - 30,
                 alignItems: 'center',
                 backgroundColor: '#ffffff',
-                borderRadius: 4,
+                borderRadius: 6,
               }}>
               {/* <Text>{data.name}</Text> */}
               <Card item={data.item} />
@@ -86,7 +120,13 @@ const Card = ({item}) => {
     <View style={{flex: 1, flexDirection: 'row'}}>
       <Image
         source={item.image}
-        style={{width: 40, height: 40, alignSelf: 'center', marginLeft: 10}}
+        style={{
+          width: 40,
+          height: 40,
+          alignSelf: 'center',
+          marginLeft: 10,
+          borderRadius: 5,
+        }}
       />
       <View
         style={{
@@ -102,8 +142,8 @@ const Card = ({item}) => {
           style={{
             // flex: 1,
             fontSize: 22,
-            fontWeight: 'bold',
-            fontFamily: 'sans-serif',
+            fontWeight: '200',
+            // fontFamily: 'sans-serif',
             marginBottom: 4,
             color: '#808080',
           }}>
@@ -129,8 +169,8 @@ const Card = ({item}) => {
             // flex: 1,
             marginBottom: 4,
             fontSize: 18,
-            fontWeight: 'semibold',
-            fontFamily: 'roboto',
+            fontWeight: '100',
+            // fontFamily: 'roboto',
           }}>
           {item.price}
         </Text>
