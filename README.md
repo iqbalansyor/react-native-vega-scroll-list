@@ -19,9 +19,9 @@ Import **VegaScrollList** component:
 import VegaScrollList from 'react-native-vega-scroll-list';
 ```
 
-**VegaScrollList** accepts **FlatList** props.
-
 Usage:
+
+This usage is similar with **FlatList**. **VegaScrollList** accepts **FlatList** props.
 
 ```
 <VegaScrollList
@@ -50,11 +50,8 @@ To use the demo application:
 3) Install demo application dependencies: `npm install`
 4) Run `npm run start` || `react-native run-android` || `react-native run-ios`
 
-## Built With
-* [React Native](https://facebook.github.io/react-native/) - A framework for building native apps using React
-
 ## Contact me
-* **Iqbal Ansyori** - *Initial work* - [ansyori.iqbal@gmail.com](mailto:ansyori.iqbal@gmail.com)
+* **Iqbal Ansyori** - [ansyori.iqbal@gmail.com](mailto:ansyori.iqbal@gmail.com)
 
 ## Contributing
 Feel free to try it out. Please submit a pull request with any features/fixes for the project.
