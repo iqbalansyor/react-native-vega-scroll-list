@@ -17,7 +17,6 @@ const VegaScrollItem = ({ y, index, margin, item }: VegaScrollItemProps) => {
   const isTop = 0;
   const isBottom = height - cardHeight;
   const isAppearing = height;
-  console.log('card height', cardHeight);
   const translateY = Animated.add(
     y,
     y.interpolate({
@@ -28,7 +27,7 @@ const VegaScrollItem = ({ y, index, margin, item }: VegaScrollItemProps) => {
   );
   const scale = position.interpolate({
     inputRange: [isDisappearing, isTop, isBottom, isAppearing],
-    outputRange: [0.9, 0.9, 1, 1],
+    outputRange: [0.85, 1, 1, 1],
     extrapolate: 'clamp',
   });
   const opacity = position.interpolate({
@@ -47,7 +46,6 @@ const VegaScrollItem = ({ y, index, margin, item }: VegaScrollItemProps) => {
       key={index}
     >
       <View
-        transparant
         onLayout={(event) => {
           var { height } = event.nativeEvent.layout;
           setCardHeight(height + margin * 2);
