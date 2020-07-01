@@ -1,7 +1,7 @@
 {
   "name": "react-native-vega-scroll-list",
-  "version": "1.0.0",
-  "description": "Vega Scroll List - a lightweight animation (fade and shrink head list) flat list - React Native",
+  "version": "0.1.0",
+  "description": "Vega Scroll List - a lightweight animation (fade and shrink head list) FlatList for React Native",
   "main": "src/VegaScrollList.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
