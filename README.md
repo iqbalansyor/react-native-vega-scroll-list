@@ -34,7 +34,7 @@ This usage is similar with **FlatList**. **VegaScrollList** accepts **FlatList**
 
 ## Configuration
 **VegaScrollList** accepts **FlatList** props.
-Only need to add `"distanceBetweenItem"` to calculate animation.
+Only need to add `distanceBetweenItem` to calculate animation.
 
 | prop | type/valid values | default | description |
 | - | - | - | - |
