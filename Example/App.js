@@ -35,7 +35,7 @@ const App: () => React$Node = () => {
       </View>
       <VegaScrollList
         style={{marginTop: 8}}
-        marginVertical={12}
+        distanceBetweenItem={12}
         data={data}
         keyExtractor={item => item.index}
         renderItem={data => {
