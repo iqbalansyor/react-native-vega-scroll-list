@@ -26,6 +26,9 @@
     "react-native",
     "flat-list",
     "list",
+    "ios",
+    "android",
+    "animation",
     "scrolling animation"
   ],
   "jest": {
