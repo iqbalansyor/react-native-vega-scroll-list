@@ -6,11 +6,16 @@ const height = wHeight;
 interface VegaScrollItemProps {
   y: Animated.Value;
   index: number;
-  margin: number;
+  distanceBetweenItem: number;
   item: React.ReactElement;
 }
 
-const VegaScrollItem = ({ y, index, margin, item }: VegaScrollItemProps) => {
+const VegaScrollItem = ({
+  y,
+  index,
+  distanceBetweenItem,
+  item,
+}: VegaScrollItemProps) => {
   const [cardHeight, setCardHeight] = useState(0);
   const position = Animated.subtract(index * cardHeight, y);
   const isDisappearing = -cardHeight;
@@ -38,7 +43,7 @@ const VegaScrollItem = ({ y, index, margin, item }: VegaScrollItemProps) => {
     <Animated.View
       style={[
         {
-          marginVertical: margin,
+          marginVertical: distanceBetweenItem,
           alignSelf: 'center',
         },
         { opacity, transform: [{ translateY }, { scale }] },
@@ -48,7 +53,7 @@ const VegaScrollItem = ({ y, index, margin, item }: VegaScrollItemProps) => {
       <View
         onLayout={(event) => {
           var { height } = event.nativeEvent.layout;
-          setCardHeight(height + margin * 2);
+          setCardHeight(height + distanceBetweenItem * 2);
         }}
       >
         {item}
