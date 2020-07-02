@@ -33,5 +33,10 @@
   ],
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iqbalansyor/react-native-vega-scroll-list"
+  },
+  "homepage": "https://github.com/iqbalansyor/react-native-vega-scroll-list"
 }
