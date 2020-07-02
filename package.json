@@ -1,7 +1,7 @@
 {
   "name": "react-native-vega-scroll-list",
-  "version": "0.1.0",
-  "description": "Vega Scroll List - a lightweight animation (fade and shrink head list) FlatList for React Native",
+  "version": "0.0.1",
+  "description": "A React Native FlatList with a lightweight animation which fade and shrink the head item of list when scrolling",
   "main": "src/VegaScrollList.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,12 @@
     "metro-react-native-babel-preset": "^0.58.0",
     "react-test-renderer": "16.11.0"
   },
+  "keywords": [
+    "react-native",
+    "flat-list",
+    "list",
+    "scrolling animation"
+  ],
   "jest": {
     "preset": "react-native"
   }
