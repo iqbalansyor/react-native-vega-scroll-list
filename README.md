@@ -7,7 +7,8 @@ A React Native FlatList with a lightweight animation which fade and shrink the h
 #### Inspired by [Vega Scroll](https://github.com/ApplikeySolutions/VegaScroll) - an iOS dependency.
 
 ## Preview
-[![vega-scroll-list-demo4175c3812f341d26.gif](https://s7.gifyu.com/images/vega-scroll-list-demo4175c3812f341d26.gif)](https://gifyu.com/image/Q8Qh)
+[![FlatList-With-Fade-Shrink-Transitions-React-Native-Vega-Scroll-List.gif](https://s9.gifyu.com/images/FlatList-With-Fade-Shrink-Transitions-React-Native-Vega-Scroll-List.gif)](https://gifyu.com/image/eYwC)
+
 
 ## Installation
 `npm install react-native-vega-scroll-list --save`
