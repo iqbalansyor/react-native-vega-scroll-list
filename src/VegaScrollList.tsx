@@ -14,6 +14,7 @@ const VegaScrollList = (props) => {
     scaleOutMin,
     ...otherProps
   } = props;
+  const numColumns = otherProps.numColumns || 1; // Dont remove the numColumns from otherProps, as FlatList will need it
   const y = new Animated.Value(0);
   const onScroll = Animated.event([{ nativeEvent: { contentOffset: { y } } }], {
     useNativeDriver: true,
@@ -28,7 +29,7 @@ const VegaScrollList = (props) => {
       renderItem={(data) => {
         let item = renderItem(data);
         const { index } = data;
-        return <VegaScrollItem {...{ index, y, item, distanceBetweenItem, fadeOnTop, scaleOutMin }} />;
+        return <VegaScrollItem {...{ index, y, item, distanceBetweenItem, fadeOnTop, scaleOutMin, numColumns }} />;
       }}
       {...{ onScroll }}
       {...otherProps}

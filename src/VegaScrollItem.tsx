@@ -10,7 +10,12 @@ interface VegaScrollItemProps {
   item: React.ReactElement;
   fadeOnTop?: boolean;
   scaleOutMin?: number;
+  numColumns: number;
 }
+const numberIsOdd = (nm: number, numCols: number) => {
+  if (nm === 0) return false;
+  return !!(nm % numCols);
+};
 
 const VegaScrollItem = ({
   y,
@@ -19,9 +24,12 @@ const VegaScrollItem = ({
   item,
   fadeOnTop,
   scaleOutMin,
+  numColumns,
 }: VegaScrollItemProps) => {
   const [cardHeight, setCardHeight] = useState(0);
-  const position = Animated.subtract(index * cardHeight, y);
+  // Constrains the indices to the number of columns
+  const oddedIndex = Math.floor((numberIsOdd(index, numColumns) ? index - 1 : index) / numColumns);
+  const position = Animated.subtract(oddedIndex * cardHeight, y);
   const isDisappearing = -cardHeight;
   const isTop = 0;
   const isBottom = height - cardHeight;
@@ -29,8 +37,8 @@ const VegaScrollItem = ({
   const translateY = Animated.add(
     y,
     y.interpolate({
-      inputRange: [0, 0.00001 + index * cardHeight],
-      outputRange: [0, -index * cardHeight],
+      inputRange: [0, 0.00001 + oddedIndex * cardHeight],
+      outputRange: [0, -oddedIndex * cardHeight],
       extrapolateRight: 'clamp',
     })
   );
