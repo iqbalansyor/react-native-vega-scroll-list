@@ -10,6 +10,7 @@ const VegaScrollList = (props) => {
     data,
     renderItem,
     distanceBetweenItem: distance,
+    fadeOnTop,
     ...otherProps
   } = props;
   const y = new Animated.Value(0);
@@ -26,7 +27,7 @@ const VegaScrollList = (props) => {
       renderItem={(data) => {
         let item = renderItem(data);
         const { index } = data;
-        return <VegaScrollItem {...{ index, y, item, distanceBetweenItem }} />;
+        return <VegaScrollItem {...{ index, y, item, distanceBetweenItem, fadeOnTop }} />;
       }}
       {...{ onScroll }}
       {...otherProps}

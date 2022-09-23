@@ -8,6 +8,7 @@ interface VegaScrollItemProps {
   index: number;
   distanceBetweenItem: number;
   item: React.ReactElement;
+  fadeOnTop?: boolean;
 }
 
 const VegaScrollItem = ({
@@ -15,6 +16,7 @@ const VegaScrollItem = ({
   index,
   distanceBetweenItem,
   item,
+  fadeOnTop,
 }: VegaScrollItemProps) => {
   const [cardHeight, setCardHeight] = useState(0);
   const position = Animated.subtract(index * cardHeight, y);
@@ -37,7 +39,7 @@ const VegaScrollItem = ({
   });
   const opacity = position.interpolate({
     inputRange: [isDisappearing, isTop, isBottom, isAppearing],
-    outputRange: [1, 1, 1, 1],
+    outputRange: [fadeOnTop ? 0 : 1, 1, 1, 1],
   });
   return (
     <Animated.View
